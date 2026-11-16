@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MediCare+</title>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#F4FAFF;
+}
+
+/* NAVBAR */
+
+nav{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:20px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:white;
+
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+z-index:999;
+
+}
+
+.logo{
+
+font-size:34px;
+
+font-weight:700;
+
+color:#0096FF;
+
+}
+
+ul{
+
+display:flex;
+
+align-items:center;
+
+gap:30px;
+
+list-style:none;
+
+}
+
+li{
+
+cursor:pointer;
+
+font-weight:500;
+
+}
+
+.district{
+
+padding:12px 20px;
+
+border:none;
+
+border-radius:30px;
+
+background:#EAF6FF;
+
+font-size:15px;
+
+cursor:pointer;
+
+outline:none;
+
+}
+
+/* HERO */
+
+.hero{
+
+height:100vh;
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.45),
+rgba(0,0,0,.55)
+),
+
+url("https://images.unsplash.com/photo-1584515933487-779824d29309");
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+color:white;
+
+padding:20px;
+
+}
+
+.content h1{
+
+font-size:70px;
+
+}
+
+.content p{
+
+font-size:22px;
+
+margin-top:20px;
+
+}
+
+.search{
+
+margin-top:40px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.search input{
+
+width:420px;
+
+padding:18px 20px;
+
+border:none;
+
+border-radius:50px;
+
+outline:none;
+
+font-size:16px;
+
+}
+
+.search button{
+
+padding:18px 40px;
+
+border:none;
+
+border-radius:50px;
+
+background:#0096FF;
+
+color:white;
+
+cursor:pointer;
+
+font-size:16px;
+
+}
+
+/* FLOW */
+
+.flow{
+
+padding:120px 8%;
+
+}
+
+.flow h2{
+
+text-align:center;
+
+font-size:50px;
+
+margin-bottom:60px;
+
+}
+
+.steps{
+
+display:grid;
+
+grid-template-columns:repeat(6,1fr);
+
+gap:20px;
+
+}
+
+.step{
+
+background:white;
+
+padding:35px;
+
+text-align:center;
+
+border-radius:25px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+.step:hover{
+
+transform:translateY(-10px);
+
+}
+
+/* FEATURES */
+
+.feature{
+
+padding:120px 8%;
+
+background:#0096FF;
+
+color:white;
+
+}
+
+.feature h1{
+
+text-align:center;
+
+font-size:45px;
+
+}
+
+.feature-grid{
+
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+margin-top:50px;
+
+flex-wrap:wrap;
+
+}
+
+.box{
+
+background:white;
+
+color:black;
+
+padding:40px;
+
+border-radius:25px;
+
+font-size:20px;
+
+min-width:220px;
+
+text-align:center;
+
+}
+
+/* FOOTER */
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+background:#08131F;
+
+color:white;
+
+font-size:18px;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+.steps{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.content h1{
+
+font-size:50px;
+
+}
+
+}
+
+@media(max-width:700px){
+
+ul{
+
+gap:15px;
+
+font-size:14px;
+
+}
+
+.steps{
+
+grid-template-columns:1fr;
+
+}
+
+.content h1{
+
+font-size:38px;
+
+}
+
+.search input{
+
+width:100%;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+
+MediCare+
+
+</div>
+
+<ul>
+
+<li>Home</li>
+
+<li>Doctors</li>
+
+<li>Hospital</li>
+
+<li>
+
+<select class="district"
+onchange="goDistrict(this.value)">
+
+<option selected disabled>
+
+Select District
+
+</option>
+
+<option value="Chennai">
+
+Chennai
+
+</option>
+
+<option value="Coimbatore">
+
+Coimbatore
+
+</option>
+
+<option value="Madurai">
+
+Madurai
+
+</option>
+
+<option value="Salem">
+
+Salem
+
+</option>
+
+<option value="Trichy">
+
+Trichy
+
+</option>
+
+<option value="Erode">
+
+Erode
+
+</option>
+
+<option value="Vellore">
+
+Vellore
+
+</option>
+
+<option value="Tirunelveli">
+
+Tirunelveli
+
+</option>
+
+</select>
+
+</li>
+
+<li>Login</li>
+
+</ul>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="content">
+
+<h1>
+
+Book Trusted Doctors
+
+</h1>
+
+<p>
+
+TN Healthcare Appointment Platform
+
+</p>
+
+<div class="search">
+
+<input
+type="text"
+placeholder="Search Hospital">
+
+<button>
+
+Search
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FLOW -->
+
+<section class="flow">
+
+<h2>
+
+Appointment Process
+
+</h2>
+
+<div class="steps">
+
+<div class="step">
+
+🏠<br><br>
+Home
+
+</div>
+
+<div class="step">
+
+📍<br><br>
+District
+
+</div>
+
+<div class="step">
+
+🏥<br><br>
+Hospital
+
+</div>
+
+<div class="step">
+
+👨‍⚕️<br><br>
+Doctor
+
+</div>
+
+<div class="step">
+
+🕒<br><br>
+Slot
+
+</div>
+
+<div class="step">
+
+✅<br><br>
+Confirm
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FEATURES -->
+
+<section class="feature">
+
+<h1>
+
+Why Choose MediCare+
+
+</h1>
+
+<div class="feature-grid">
+
+<div class="box">
+
+⚡ Instant Booking
+
+</div>
+
+<div class="box">
+
+🩺 Verified Doctors
+
+</div>
+
+<div class="box">
+
+🕒 24×7 Support
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 MediCare+
+
+</footer>
+
+
+
+<!-- SCRIPT -->
+
+<script>
+
+function goDistrict(district){
+
+window.location.href =
+"/doctors/hospital-list/?district=" + district;
+
+}
+
+</script>
+
+</body>
+
+</html>

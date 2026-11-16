@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Book Appointment</title>
+</head>
+
+<body>
+
+<h1>
+Book Appointment with {{doctor}}
+</h1>
+
+{% for slot in slots %}
+
+<div>
+
+<h3>{{slot}}</h3>
+
+<a href="/appointments/success/">
+<button>
+Confirm Slot
+</button>
+</a>
+
+</div>
+
+{% endfor %}
+
+</body>
+
+</html>

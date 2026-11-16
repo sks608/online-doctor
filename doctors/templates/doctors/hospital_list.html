@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Hospital List</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+
+background:#F4FAFF;
+
+padding:50px;
+
+}
+
+h1{
+
+margin-bottom:40px;
+
+color:#0096FF;
+
+}
+
+.card{
+
+background:white;
+
+padding:30px;
+
+margin-bottom:25px;
+
+border-radius:20px;
+
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-5px);
+
+}
+
+h2{
+
+margin-bottom:15px;
+
+}
+
+button{
+
+padding:12px 25px;
+
+border:none;
+
+background:#0096FF;
+
+color:white;
+
+border-radius:10px;
+
+cursor:pointer;
+
+font-size:15px;
+
+}
+
+button:hover{
+
+background:#0077CC;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>
+
+Hospitals in {{ district }}
+
+</h1>
+
+{% for hospital in hospitals %}
+
+<div class="card">
+
+<h2>
+
+{{ hospital }}
+
+</h2>
+
+<a href="/doctors/doctor-list/?hospital={{hospital}}">
+
+<button>
+
+View Doctors
+
+</button>
+
+</a>
+
+</div>
+
+{% endfor %}

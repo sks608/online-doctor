@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Doctors</title>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+padding:50px;
+
+background:#F4FAFF;
+
+}
+
+.card{
+
+background:white;
+
+padding:30px;
+
+margin-top:20px;
+
+border-radius:20px;
+
+box-shadow:
+0 5px 20px rgba(0,0,0,.08);
+
+}
+
+button{
+
+padding:12px 25px;
+
+background:#0096FF;
+
+color:white;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>
+
+Doctors in {{hospital}}
+
+</h1>
+
+{% for doctor in doctors %}
+
+<div class="card">
+
+<h2>
+
+{{doctor}}
+
+</h2>
+
+<p>
+
+Specialist Doctor
+
+</p>
+
+<button>
+
+Book Appointment
+
+</button>
+
+</div>
+
+{% endfor %}
+
+</body>
+
+</html>
